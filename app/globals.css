@@ -43,9 +43,8 @@ body {
     transform: translate3d(0, -10px, 0);
   }
 }
-
 .small-planet {
-  animation: float 3s ease-in-out infinite;
+  opacity: 0;
 }
 @layer utilities {
   .text-balance {
