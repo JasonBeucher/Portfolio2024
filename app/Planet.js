@@ -70,7 +70,7 @@ const Planet = () => {
         <Image src="./small-planet.png" alt="Small Planet" width={100} height={100} />
       </div>
       <div className="absolute right-20 top-20 transform small-planet ">
-        <Image src="../small-planet.png" alt="Small Planet" width={100} height={100} />
+        <Image src="./small-planet.png" alt="Small Planet" width={100} height={100} />
       </div>
     </div>
   );
