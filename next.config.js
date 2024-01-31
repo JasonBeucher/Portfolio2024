@@ -2,11 +2,15 @@
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
-    output: 'export',
     distDir: 'dist',
-    images:{
-        unoptimized: true,
-    }
+    images: {
+      unoptimized: true,
+    },
+  };
+  
+  if (process.env.NODE_ENV === 'production') {
+    nextConfig.output = 'export';
   }
-   
-  module.exports = nextConfig
+  
+  module.exports = nextConfig;
+  

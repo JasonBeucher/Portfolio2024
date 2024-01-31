@@ -6,15 +6,43 @@ import anime from 'animejs';
 const Planet = () => {
   useEffect(() => {
     const animatePlanet = (element) => {
-      anime({
+      element.style.cursor = 'pointer';
+      const floatingAnimation = anime({
         targets: element,
         translateY: () => anime.random(-10, 10) + 'px',
         rotate: () => anime.random(-5, 5) + 'deg',
         easing: 'easeInOutQuad',
-        duration: 2000 + Math.random() * 1000,
+        duration: 1500 + Math.random() * 1000,
         loop: true,
         direction: 'alternate',
       });
+      // Add mouseover event listener
+      element.addEventListener('mouseenter', () => {
+        // Pause the floating animation
+        floatingAnimation.pause();
+        anime({
+          targets: element,
+          scale: 1.2, // Increase size by 20%
+          rotate: () => anime.random(-15, 15) + 'deg', // Random rotate
+          duration: 500,
+          elasticity: 400,
+        });
+      });
+
+      // Add mouseout event listener
+      element.addEventListener('mouseleave', () => {
+        // Resume the floating animation
+        floatingAnimation.play();
+        anime({
+          targets: element,
+          scale: 1, // Reset size
+          rotate: 0, // Reset rotation
+          duration: 500,
+          elasticity: 400,
+        });
+        
+      });
+
     };
 
     const planetElements = document.querySelectorAll('.small-planet');
@@ -40,14 +68,18 @@ const Planet = () => {
         direction: 'alternate',
       });
 
+
     });
   }, []);
 
+
   return (
+    
     <div className="relative w-120 h-120">
-      <div className="absolute inset-1/4 flex items-center justify-center">
-        <Image src="./planet.png" alt="Planet" width={300} height={300} />
-      </div>
+
+    <div className="absolute inset-1/4 flex items-center justify-center">
+      <Image src="./planet.png" alt="Planet" width={300} height={300} className='big-planet'/>
+    </div>
       <div className="absolute top-0 left-1/2 transform  small-planet top-center">
         <Image src="./github.png" alt="Small Planet" width={100} height={100} />
       </div>

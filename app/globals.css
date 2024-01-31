@@ -1,18 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* Ajoutez cela à votre fichier de styles CSS */
 
+
+@keyframes animateStars {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 10000px 5000px;
+  }
+}
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
   }
 }
 
@@ -32,6 +42,8 @@ body {
 .h-120 {
   height: 40rem;
 }
+
+
 @keyframes float {
   0% {
     transform: translate3d(0, 0, 0);
@@ -46,6 +58,9 @@ body {
 .small-planet {
   opacity: 0;
 }
+
+
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
