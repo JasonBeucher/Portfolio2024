@@ -92,7 +92,7 @@ const Planet = () => {
 
   return (
     <div>
-      <h1 className="text-4xl text-center font-bold">JASON BEUCHER</h1>
+      <h1 className="text-center font-bold">JASON BEUCHER</h1>
       <div className="relative w-120 h-120">
         <div className="absolute inset-1/4 flex items-center justify-center">
           <Image src="./planet.png" alt="Planet" width={300} height={300} className='big-planet' />
