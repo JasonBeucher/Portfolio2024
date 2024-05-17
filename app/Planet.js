@@ -83,12 +83,31 @@ const Planet = () => {
 
 
     });
+
+    const titleElement = document.querySelector('h1');
+    titleElement.innerHTML = titleElement.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+  
+    anime.timeline({loop: true})
+      .add({
+        targets: '.letter',
+        translateY: ["1.1em", 0],
+        translateZ: 0,
+        duration: 750,
+        delay: (el, i) => 50 * i
+      }).add({
+        targets: '.letter',
+        translateY: ["0", "-1.1em"],
+        translateZ: 0,
+        duration: 750,
+        delay: (el, i) => 50 * i
+      });
+
   }, []);
 
 
   return (
     <div>
-    <h1 className="text-4xl text-center font-bold mt-10">Jason Beucher</h1>
+    <h1 className="text-4xl text-center font-bold mb-10">JASON BEUCHER</h1>
     <div className="relative w-120 h-120">
 
       <div className="absolute inset-1/4 flex items-center justify-center">
