@@ -86,7 +86,7 @@ const Planet = () => {
 
     const titleElement = document.querySelector('h1');
     titleElement.innerHTML = titleElement.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-    
+  
     anime.timeline({loop: true})
       .add({
         targets: '.letter',
@@ -107,7 +107,7 @@ const Planet = () => {
 
   return (
     <div>
-    <Title className="text-4xl text-center font-bold mb-10">JASON BEUCHER</Title>
+    <h1 className="text-4xl text-center font-bold mb-10">JASON BEUCHER</h1>
     <div className="relative w-120 h-120">
 
       <div className="absolute inset-1/4 flex items-center justify-center">
