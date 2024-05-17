@@ -87,10 +87,13 @@ const Planet = () => {
     const titleElement = document.querySelector('h1');
     titleElement.innerHTML = titleElement.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
+    let randomTranslateY = anime.random(-10, 10) + 'px';
+    let randomRotate = anime.random(-5, 5) + 'deg';
+    
     anime({
       targets: '.letter',
-      translateY: () => anime.random(-5, 5) + 'px',
-      rotate: () => anime.random(-5, 5) + 'deg',
+      translateY: randomTranslateY,
+      rotate: randomRotate,
       easing: 'easeInOutSine',
       duration: 2000 + Math.random() * 1000,
       loop: true,
