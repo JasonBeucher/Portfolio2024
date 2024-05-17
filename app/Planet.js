@@ -1,28 +1,29 @@
-"use client";
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import anime from 'animejs';
 
 const Planet = () => {
+  const [selectedPlanet, setSelectedPlanet] = useState(null);
+
   useEffect(() => {
     const animatePlanet = (element) => {
       element.style.cursor = 'pointer';
       const floatingAnimation = anime({
         targets: element,
-        translateY: [-10, 10], // Simplify animation
-        rotate: [-5, 5], // Simplify animation
+        translateY: [-10, 10],
+        rotate: [-5, 5],
         easing: 'easeInOutQuad',
         duration: 1500 + Math.random() * 1000,
         loop: true,
         direction: 'alternate',
       });
-      
+
       element.addEventListener('mouseenter', () => {
         floatingAnimation.pause();
         anime({
           targets: element,
           scale: 1.2,
-          rotate: [-15, 15], // Simplify animation
+          rotate: [-15, 15],
           duration: 500,
           elasticity: 400,
         });
@@ -54,15 +55,6 @@ const Planet = () => {
     };
 
     const planetElements = document.querySelectorAll('.small-planet');
-    const top_center = document.querySelector('.top-center');
-    top_center.style = 'top: 10%; transform: translate(-50%, -50%);';
-    const bottom_center = document.querySelector('.bottom-center');
-    bottom_center.style = 'bottom: -5%; transform: translate(-50%, -50%);';
-    const left_center = document.querySelector('.left-center');
-    left_center.style = 'left: 5%; transform: translate(-50%, -50%);';
-    const right_center = document.querySelector('.right-center');
-    right_center.style = 'right: -10%; transform: translate(-50%, -50%);';
-    
     planetElements.forEach((planet) => {
       animatePlanet(planet);
       anime({
@@ -72,6 +64,10 @@ const Planet = () => {
         duration: 2000 + Math.random() * 1000,
         loop: false,
       });
+
+      planet.addEventListener('click', () => {
+        setSelectedPlanet(planet.querySelector('.planet-text').textContent);
+      });
     });
 
     const titleElement = document.querySelector('h1');
@@ -80,8 +76,8 @@ const Planet = () => {
     letterElement.forEach((letter) => {
       anime({
         targets: letter,
-        translateY: [-5, 5], 
-        rotate: [-5, 5], 
+        translateY: [-5, 5],
+        rotate: [-5, 5],
         easing: 'easeInOutQuad',
         duration: 5000 + Math.random() * 1000,
         loop: true,
@@ -130,6 +126,12 @@ const Planet = () => {
           <p className="planet-text">Test</p>
         </div>
       </div>
+      {selectedPlanet && (
+        <div className="info-box">
+          <h2>Information about {selectedPlanet}</h2>
+          <p>Details about the selected planet will go here.</p>
+        </div>
+      )}
     </div>
   );
 };
