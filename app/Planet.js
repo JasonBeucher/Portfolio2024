@@ -86,17 +86,16 @@ const Planet = () => {
 
     const titleElement = document.querySelector('h1');
     titleElement.innerHTML = titleElement.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-  
+
     anime.timeline({loop: true})
     .add({
       targets: '.letter',
-      translateY: [
-        {value: "1em", duration: 1000, easing: "easeOutSine"},
-        {value: "0em", duration: 1000, easing: "easeInOutQuad"},
-        {value: "-1em", duration: 1000, easing: "easeInOutQuad"},
-        {value: "0em", duration: 1000, easing: "easeInSine"}
-      ],
-      delay: (el, i) => 100 * i
+      translateY: () => anime.random(-10, 10) + 'px',
+      rotate: () => anime.random(-5, 5) + 'deg',
+      easing: 'easeInOutQuad',
+      duration: 1500 + Math.random() * 1000,
+      loop: true,
+      direction: 'alternate',
     });
 
   }, []);
