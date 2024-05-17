@@ -80,7 +80,7 @@ const Planet = () => {
     letterElement.forEach((letter) => {
       anime({
         targets: letter,
-        translateY: [-10, 10], // Simplify animation
+        translateY: [-5, 5], // Simplify animation
         rotate: [-5, 5], // Simplify animation
         easing: 'easeInOutQuad',
         duration: 1000 + Math.random() * 1000,
