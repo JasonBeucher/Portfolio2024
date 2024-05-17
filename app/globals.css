@@ -73,8 +73,21 @@ body {
 
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.w-120 {
+  width: 40rem; /* Remplacez par la largeur souhaitée pour les tailles d'écran plus grandes */
+}
+
+.h-120 {
+  height: 40rem; /* Remplacez par la hauteur souhaitée pour les tailles d'écran plus grandes */
+}
+
+@media (max-width: 768px) {
+  .w-120 {
+    width: 80%; /* Redimensionnez la largeur pour les écrans plus petits */
   }
+
+  .h-120 {
+    height: auto; /* Permettez à la hauteur de s'ajuster automatiquement pour les écrans plus petits */
+  }
+
 }
