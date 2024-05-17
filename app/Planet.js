@@ -76,15 +76,16 @@ const Planet = () => {
 
     const titleElement = document.querySelector('h1');
     titleElement.innerHTML = titleElement.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-
-    anime({
-      targets: '.letter',
-      translateY: [-10, 10], // Simplify animation
-      rotate: [-5, 5], // Simplify animation
-      easing: 'easeInOutSine',
-      duration: 2000 + Math.random() * 1000,
-      loop: true,
-      direction: 'alternate',
+    titleElement.forEach((letter) => {
+      anime({
+        targets: letter,
+        translateY: [-10, 10], // Simplify animation
+        rotate: [-5, 5], // Simplify animation
+        easing: 'easeInOutQuad',
+        duration: 1000 + Math.random() * 1000,
+        loop: true,
+        direction: 'alternate',
+      });
     });
   }, []);
 
