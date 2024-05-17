@@ -89,10 +89,10 @@ const Planet = () => {
 
     anime({
       targets: '.letter',
-      translateY: () => anime.random(-10, 10) + 'px',
+      translateY: () => anime.random(-5, 5) + 'px',
       rotate: () => anime.random(-5, 5) + 'deg',
-      easing: 'easeInOutQuad',
-      duration: 1500 + Math.random() * 1000,
+      easing: 'easeInOutSine',
+      duration: 2000 + Math.random() * 1000,
       loop: true,
       direction: 'alternate',
     });
