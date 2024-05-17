@@ -87,7 +87,8 @@ const Planet = () => {
 
 
   return (
-
+    <div>
+    <h1 className="text-4xl text-center font-bold mt-10">Jason Beucher</h1>
     <div className="relative w-120 h-120">
 
       <div className="absolute inset-1/4 flex items-center justify-center">
@@ -125,6 +126,7 @@ const Planet = () => {
         <Image src="./small-planet.png" alt="Small Planet" width={100} height={100} />
         <p className="planet-text">Test</p>
       </div>
+    </div>
     </div>
   );
 };
