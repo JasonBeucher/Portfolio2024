@@ -68,6 +68,10 @@ body {
 }
 .letter {
   display: inline-block;
+  font-size: 4.5rem;
+  line-height: 9.5rem;
+  will-change: transform;
+
 }
 @layer utilities {
   .text-balance {
