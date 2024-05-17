@@ -87,8 +87,7 @@ const Planet = () => {
     const titleElement = document.querySelector('h1');
     titleElement.innerHTML = titleElement.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
-    anime.timeline({loop: true})
-    .add({
+    anime({
       targets: '.letter',
       translateY: () => anime.random(-10, 10) + 'px',
       rotate: () => anime.random(-5, 5) + 'deg',
