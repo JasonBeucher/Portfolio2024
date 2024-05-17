@@ -76,7 +76,8 @@ const Planet = () => {
 
     const titleElement = document.querySelector('h1');
     titleElement.innerHTML = titleElement.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-    titleElement.forEach((letter) => {
+    const letterElement = document.querySelectorAll('.letter');
+    letterElement.forEach((letter) => {
       anime({
         targets: letter,
         translateY: [-10, 10], // Simplify animation
