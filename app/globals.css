@@ -83,11 +83,14 @@ body {
 
 @media (max-width: 768px) {
   .w-120 {
-    width: 80%; /* Redimensionnez la largeur pour les écrans plus petits */
+    width: 30rem; /* Redimensionnez la largeur pour les écrans plus petits */
   }
 
   .h-120 {
-    height: auto; /* Permettez à la hauteur de s'ajuster automatiquement pour les écrans plus petits */
+    height: 30rem; /* Permettez à la hauteur de s'ajuster automatiquement pour les écrans plus petits */
+  }
+  .small-planet {
+    width: 20%;
   }
 
 }
